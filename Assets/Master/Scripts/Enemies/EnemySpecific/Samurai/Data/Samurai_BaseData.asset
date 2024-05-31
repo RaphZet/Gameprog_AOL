@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17dfef9cc4a7f844889b2e821a1c4fc6, type: 3}
+  m_Name: Samurai_BaseData
+  m_EditorClassIdentifier: 
+  maxHealth: 70
+  damageHopSpeed: 10
+  wallCheckDistance: 0.2
+  ledgeCheckDistance: 1.42
+  groundCheckRadius: 0.3
+  minAgroDistance: 3.9
+  maxAgroDistance: 11.57
+  stunResistance: 4
+  stunRecoveryTime: 2
+  closeRangeActionDistance: 1.67
+  hitParticle: {fileID: 5611684768278599299, guid: 21c20f27c8fe2bf4db047771887ba21c, type: 3}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 8
+  Player:
+    serializedVersion: 2
+    m_Bits: 128
