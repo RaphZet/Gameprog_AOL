@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f415ea1561d83ba49b310a7b195e1313, type: 3}
+  m_Name: Samurai_DeadStateData
+  m_EditorClassIdentifier: 
+  deathChunkParticle: {fileID: 5611684768278599299, guid: 21c20f27c8fe2bf4db047771887ba21c, type: 3}
+  deathBloodParticle: {fileID: 3628652977672136027, guid: b2d2a26c59f1e0a41a83d4ad59fa8f84, type: 3}
