@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +14,11 @@ public class GameManager : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private float respawnTime;
+
+    [SerializeField]
+    private TMP_Text scoreText; // UI score di canvas
+    [SerializeField]
+    private int score = 0;
 
     private float respawnTimeStart;
 
@@ -81,7 +88,27 @@ public class GameManager : MonoBehaviour
 
     public void DestroyPanels()
     {
-            Destroy(winPanelInstance);
-            Destroy(losePanelInstance);
-        }
+        Destroy(winPanelInstance);
+        Destroy(losePanelInstance);
     }
+
+    public void AddScore(int amount)
+    {
+        score += amount;
+        UpdateScoreText();
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+        UpdateScoreText();
+    }
+
+    private void UpdateScoreText()
+    {
+        scoreText.text = "Score : " + score.ToString();
+    }
+
+}
+
+

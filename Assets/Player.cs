@@ -45,5 +45,16 @@ public class Player : MonoBehaviour
             losePanelInstance.SetActive(true); // Aktifkan panel lose
             Time.timeScale = 0;
         }
+        else if(collision.tag == "Coin")
+        {
+            GameManager gameManager = FindAnyObjectByType<GameManager>();
+            if (gameManager == null)
+            {
+                Debug.LogError("Cannot find game manager");
+                return;
+            }
+            Destroy(collision.gameObject);
+            gameManager.AddScore(1);
+        }
     }
 }

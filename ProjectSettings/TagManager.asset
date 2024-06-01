@@ -10,6 +10,7 @@ TagManager:
   - LOSE
   - WinPanel
   - LosePanel
+  - Coin
   layers:
   - Default
   - TransparentFX
