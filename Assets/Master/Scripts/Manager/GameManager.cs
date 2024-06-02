@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     private TMP_Text scoreText; // UI score di canvas
     [SerializeField]
     private int score = 0;
+    [SerializeField]
+    private GameObject ingameUI, titlePanel, pausePanel;
 
     private float respawnTimeStart;
 
@@ -28,6 +30,13 @@ public class GameManager : MonoBehaviour
 
     private GameObject winPanelInstance; // Instance dari panel win
     private GameObject losePanelInstance; // Instance dari panel lose
+
+    public enum GameState
+    {
+        Title, Paused, Playing
+    }
+
+    private GameState gameState;
 
     private void Awake()
     {
@@ -43,11 +52,81 @@ public class GameManager : MonoBehaviour
         // Mencari instance panel win dan lose
         winPanelInstance = GameObject.FindWithTag("WinPanel");
         losePanelInstance = GameObject.FindWithTag("LosePanel");
+
+        UpdateScoreText();
+        SetGameState(GameState.Title);
+    }
+
+    public void SetGameState(GameState state)
+    {
+        gameState = state;
+        if(state == GameState.Title)
+        {
+            titlePanel.SetActive(true);
+            pausePanel.SetActive(false);
+            ingameUI.SetActive(false);
+            Time.timeScale = 0;
+        }
+        else if(state == GameState.Playing)
+        {
+            titlePanel.SetActive(false);
+            pausePanel.SetActive(false);
+            ingameUI.SetActive(true);
+            Time.timeScale = 1;
+        }
+        else if (state == GameState.Paused)
+        {
+            titlePanel.SetActive(false);
+            pausePanel.SetActive(true);
+            ingameUI.SetActive(false);
+            Time.timeScale = 0;
+        }
+    }
+
+    public void StartButton() //kalo player teken button start
+    {
+        SetGameState(GameState.Playing);
+    }
+
+    public void ResumeButton()
+    {
+        SetGameState(GameState.Playing);
+    }
+
+    public void PauseButton()
+    {
+        SetGameState(GameState.Paused);
     }
 
     private void Update()
     {
+        CheckInput();
         CheckRespawn();
+    }
+
+    private void CheckInput()
+    {
+        if(gameState == GameState.Playing)
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                SetGameState(GameState.Paused);
+            }
+        }
+        else if (gameState == GameState.Paused)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SetGameState(GameState.Playing);
+            }
+        }
+        else if (gameState == GameState.Title)
+        {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                SetGameState(GameState.Playing);
+            }
+        }
     }
 
     public void Respawn()
@@ -70,6 +149,7 @@ public class GameManager : MonoBehaviour
 #if UNITY_EDITOR
         // Jika dalam mode editor, log pesan keluar
         Debug.Log("Exit game");
+        Application.Quit();
 #else
         // Jika dalam build yang sebenarnya, keluar dari aplikasi
         Application.Quit();
@@ -106,7 +186,12 @@ public class GameManager : MonoBehaviour
 
     private void UpdateScoreText()
     {
-        scoreText.text = "Score : " + score.ToString();
+        if(score < 10)
+        {
+            scoreText.text = "0" + score.ToString();
+            return;
+        }
+        scoreText.text = score.ToString();
     }
 
 }
