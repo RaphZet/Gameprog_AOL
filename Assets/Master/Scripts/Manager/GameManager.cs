@@ -9,7 +9,7 @@ using System;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private Transform respawnPoint;
+    public Transform respawnPoint;
     [SerializeField]
     private GameObject player;
     [SerializeField]
@@ -17,8 +17,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private TMP_Text scoreText; // UI score di canvas
-    [SerializeField]
-    private int score = 0;
+    public int score = 0;
     [SerializeField]
     private GameObject ingameUI, titlePanel, pausePanel;
 
@@ -88,6 +87,12 @@ public class GameManager : MonoBehaviour
         SetGameState(GameState.Playing);
     }
 
+    public void LoadButton()
+    {
+        SetGameState(GameState.Playing);
+        LoadData();
+    }
+
     public void ResumeButton()
     {
         SetGameState(GameState.Playing);
@@ -126,6 +131,10 @@ public class GameManager : MonoBehaviour
             {
                 SetGameState(GameState.Playing);
             }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                LoadButton();
+            }
         }
     }
 
@@ -133,6 +142,13 @@ public class GameManager : MonoBehaviour
     {
         respawnTimeStart = Time.time;
         respawn = true;
+    }
+
+    public void NewGameButton()
+    {
+        ResetData();
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void RestartButton()
@@ -194,6 +210,33 @@ public class GameManager : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
+    public void SaveData()
+    {
+        SaveSystem.SavePlayer(this, FindObjectOfType<PlayerStats>(), FindObjectOfType<Timer>());
+    }
+
+    public void ResetData() //buat delete save data
+    {
+        SaveSystem.ResetData();
+    }
+        
+    public void LoadData()
+    {
+        SaveData data = SaveSystem.LoadPlayer();
+
+        score = data.score;
+        UpdateScoreText();
+
+        PlayerStats playerStats = FindObjectOfType<PlayerStats>();
+        if (playerStats != null)
+        {
+            playerStats.currentHealth = data.currentHealth;
+            playerStats.gameObject.transform.position = new Vector3(data.playerPosition[0], data.playerPosition[1], data.playerPosition[2]);
+        }
+        respawnPoint.position = new Vector3(data.playerPosition[0], data.playerPosition[1], data.playerPosition[2]);
+
+        FindObjectOfType<Timer>().timeRemaining = data.timeElapsed;
+    }
 }
 
 

@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private GameObject deathChunkparticle, deathBloodParticle, DeathAnimation;
 
-    private float currentHealth;
+    public float currentHealth;
 
     private GameManager GM;
 
