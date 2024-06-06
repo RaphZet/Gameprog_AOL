@@ -88352,6 +88352,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1945169429330593304, guid: 7f51b7a3fe95d274ca24d8518667d16d, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945169429330593304, guid: 7f51b7a3fe95d274ca24d8518667d16d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f522f8480c63a9498145f26f0f692f5, type: 3}
+    - target: {fileID: 1945169429330593304, guid: 7f51b7a3fe95d274ca24d8518667d16d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2978808434816963693, guid: 7f51b7a3fe95d274ca24d8518667d16d, type: 3}
       propertyPath: m_Name
       value: SavePoint
@@ -88396,7 +88408,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1945169429330593304, guid: 7f51b7a3fe95d274ca24d8518667d16d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -89867,6 +89880,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f51b7a3fe95d274ca24d8518667d16d, type: 3}
+--- !u!1001 &925025320
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4117056596074686411, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.9707847
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.73957735
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11740152
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392496872907955422, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: acb19dc3aadaef540b15cb49508c7c03, type: 3}
 --- !u!4 &940766949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5757189884497833032, guid: 0bed8f657d3a398448e600b2d0b2dba9, type: 3}
@@ -98915,3 +98985,4 @@ SceneRoots:
   - {fileID: 6254464837011534572}
   - {fileID: 284929942}
   - {fileID: 922819863}
+  - {fileID: 925025320}

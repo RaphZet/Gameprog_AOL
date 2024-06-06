@@ -6,6 +6,13 @@ public class SavePoint : MonoBehaviour
 {
     [SerializeField] SpriteRenderer activeSprite, inactiveSprite;
 
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
@@ -20,6 +27,10 @@ public class SavePoint : MonoBehaviour
         if(gameManager.respawnPoint != null) 
         { 
             Deactivate(gameManager.respawnStatue);
+            if(gameManager.respawnStatue != item)
+            {
+                FindObjectOfType<AudioManager>().Play("Statue activate");
+            }
         }
         gameManager.respawnPoint.position = gameObject.transform.position;
         gameManager.respawnStatue = this;

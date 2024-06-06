@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    private AudioManager audioManager;
+
     public GameObject winPanelPrefab; // Prefab untuk panel win
     public GameObject losePanelPrefab; // Prefab untuk panel lose
 
@@ -14,6 +16,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+
         // Instantiate panel win dan panel lose dari prefab
         winPanelInstance = Instantiate(winPanelPrefab);
         losePanelInstance = Instantiate(losePanelPrefab);
@@ -53,6 +57,7 @@ public class Player : MonoBehaviour
                 Debug.LogError("Cannot find game manager");
                 return;
             }
+            audioManager.Play("Obtain coin");
             Destroy(collision.gameObject);
             gameManager.AddScore(1);
         }

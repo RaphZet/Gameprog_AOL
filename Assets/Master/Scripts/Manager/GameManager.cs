@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     private GameObject winPanelInstance; // Instance dari panel win
     private GameObject losePanelInstance; // Instance dari panel lose
 
+    private AudioManager audioManager;
+
     public enum GameState
     {
         Title, Paused, Playing
@@ -46,9 +48,12 @@ public class GameManager : MonoBehaviour
 
     private void Initialize()
     {
+
         CVC = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
         respawnTimeStart = 0;
         respawn = false;
+
+        audioManager = FindObjectOfType<AudioManager>();
 
         // Mencari instance panel win dan lose
         winPanelInstance = GameObject.FindWithTag("WinPanel");
@@ -86,22 +91,26 @@ public class GameManager : MonoBehaviour
 
     public void StartButton() //kalo player teken button start
     {
+        audioManager.Play("Button click");
         SetGameState(GameState.Playing);
     }
 
     public void LoadButton()
     {
+        audioManager.Play("Button click");
         SetGameState(GameState.Playing);
         LoadData();
     }
 
     public void ResumeButton()
     {
+        audioManager.Play("Button click");
         SetGameState(GameState.Playing);
     }
 
     public void PauseButton()
     {
+        audioManager.Play("Button click");
         SetGameState(GameState.Paused);
     }
 

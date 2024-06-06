@@ -27,8 +27,11 @@ public class PlayerCombat : MonoBehaviour
     private PlayerController PC;
     private PlayerStats PS;
 
+    private AudioManager audioManager;
+
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         anim = GetComponent<Animator>();
         anim.SetBool("canAttack", combatEnabled);
         PC = GetComponent<PlayerController>();
@@ -63,6 +66,7 @@ public class PlayerCombat : MonoBehaviour
                 isAttacking = true;
                 lastAttackTime = Time.time; // Perbarui waktu serangan terakhir
                 anim.SetBool("isAttacking", isAttacking);
+                audioManager.Play("Electric attack");
             }
         }
         if (Time.time >= lastInputTime + inputTimer)
