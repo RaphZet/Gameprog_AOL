@@ -146,7 +146,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1960749343, guid: f237f71e290e6ea4f95b5e62b9daa2d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -342,6 +342,7 @@ MonoBehaviour:
   deathChunkparticle: {fileID: 5611684768278599299, guid: 21c20f27c8fe2bf4db047771887ba21c, type: 3}
   deathBloodParticle: {fileID: 941432360744568287, guid: 340ebc65f8bf3a94991d75a65f96ca1c, type: 3}
   DeathAnimation: {fileID: 3628652977672136027, guid: b2d2a26c59f1e0a41a83d4ad59fa8f84, type: 3}
+  currentHealth: 0
   numberPrefab: {fileID: 2704891108622334119, guid: 49f9263243a7a9a45bcc219f844ef722, type: 3}
 --- !u!114 &4367097359918510763
 MonoBehaviour:

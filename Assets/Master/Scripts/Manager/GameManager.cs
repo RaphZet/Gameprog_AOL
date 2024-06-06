@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     private bool respawn;
 
+    [HideInInspector] public SavePoint respawnStatue;
+
     private CinemachineVirtualCamera CVC;
 
     private GameObject winPanelInstance; // Instance dari panel win
