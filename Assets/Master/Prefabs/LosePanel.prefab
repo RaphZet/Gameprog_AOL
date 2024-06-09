@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2182719388449772113}
   - component: {fileID: 7965447775792216681}
-  - component: {fileID: 1658621382164048616}
+  - component: {fileID: 5141182266242038771}
   m_Layer: 5
   m_Name: LoseText
   m_TagString: Untagged
@@ -269,7 +269,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2307421256890980268}
   m_CullTransparentMesh: 1
---- !u!114 &1658621382164048616
+--- !u!114 &5141182266242038771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2307421256890980268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -289,20 +289,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: a6a9e8503517d794a964cf99c9d9a3e8, type: 3}
-    m_FontSize: 84
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 200
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Boooo!!! u lose!
+  m_Sprite: {fileID: -1284676157, guid: 35f096b2ea172f84989c5def1c0c4bdf, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2527117276879903433
 GameObject:
   m_ObjectHideFlags: 0
